@@ -621,7 +621,7 @@ export default function App() {
                       className="inline-flex items-center gap-1.5 text-cyan-600 dark:text-cyan-400 hover:underline"
                     >
                       <Globe className="w-3.5 h-3.5 shrink-0" />
-                      <span>hridoyzamancv.vercel.app</span>
+                      <span>hridoy-zaman.vercel.app</span>
                     </a>
                   </div>
                 </div>
@@ -1041,7 +1041,8 @@ export default function App() {
                   </a>
                   <a
                     href={PROFILE_DATA.cvPdfUrl}
-                    download="Hridoy_Zaman_CV.pdf"
+                    target="_blank"
+                    rel="noopener noreferrer"
                     className="inline-flex items-center gap-1.5 px-3.5 py-2 text-xs font-medium rounded-lg border border-slate-300 dark:border-slate-700 text-slate-700 dark:text-slate-300 hover:bg-slate-100 dark:hover:bg-slate-800 transition-colors whitespace-nowrap shrink-0"
                   >
                     <Download className="w-3.5 h-3.5" />
@@ -1320,7 +1321,7 @@ export default function App() {
               rel="noopener noreferrer"
               className="hover:text-cyan-600 dark:hover:text-cyan-400 transition-colors font-mono"
             >
-              hridoyzamancv.vercel.app
+              hridoy-zaman.vercel.app
             </a>
           </div>
         </div>

@@ -80,8 +80,9 @@ export const PROFILE_DATA = {
   email: 'hridoyzaman1@gmail.com',
   phone: '+880 1947-062892',
   location: 'Dhaka, Bangladesh',
-  website: 'https://hridoyzamancv.vercel.app/',
-  cvPdfUrl: '/assets/aistudio/CV_598292e4.pdf',
+  website: 'https://hridoy-zaman.vercel.app/',
+  cvPdfUrl:
+    'https://drive.google.com/file/d/1SKloSy1-IBQ8zT686Ek2CaauZgJC3abb/view?usp=drive_link',
   degreeStatus: 'B.Sc. in Biotechnology · BRAC University (2026)',
   clinicalTraining:
     'National Institute of Cancer Research and Hospital (NICRH) — Dept. of Immunology & Molecular Biology',
