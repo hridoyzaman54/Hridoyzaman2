@@ -9,9 +9,23 @@
 }
 
 @layer base {
-  html {
+  html, body {
+    max-width: 100%;
+    overflow-x: hidden;
+    position: relative;
     font-family: var(--font-sans);
     scroll-behavior: smooth;
+    -webkit-text-size-adjust: 100%;
+  }
+
+  body {
+    width: 100%;
+    margin: 0;
+    padding: 0;
+  }
+
+  *, *::before, *::after {
+    box-sizing: border-box;
   }
 
   h1, h2, h3, h4, .font-display {
@@ -22,6 +36,14 @@
     font-family: var(--font-mono);
     font-variant-numeric: tabular-nums;
   }
+}
+
+.no-scrollbar::-webkit-scrollbar {
+  display: none;
+}
+.no-scrollbar {
+  -ms-overflow-style: none;
+  scrollbar-width: none;
 }
 
 @keyframes marquee-scroll {

@@ -655,7 +655,7 @@ export const InteractiveBiotechTimeline: React.FC<
         </div>
 
         {/* Right Column: Sticky Biomolecular Morphogenesis Stage (Protein Folding / Cell Growth / Antibody Docking) */}
-        <div className="lg:col-span-5 lg:sticky lg:top-24 rounded-2xl border border-slate-200 dark:border-slate-800 bg-white dark:bg-[#0B101B] p-6 space-y-4">
+        <div className="lg:col-span-5 lg:sticky lg:top-24 rounded-2xl border border-slate-200 dark:border-slate-800 bg-white dark:bg-[#0B101B] p-4 sm:p-6 space-y-4 overflow-hidden">
           <div className="flex items-start justify-between gap-3 pb-3 border-b border-slate-200 dark:border-slate-800">
             <div>
               <div className="text-xs font-mono uppercase tracking-wider text-cyan-600 dark:text-cyan-400">
@@ -686,39 +686,39 @@ export const InteractiveBiotechTimeline: React.FC<
           </div>
 
           {/* Interactive Mode Switcher so user can also test all 3 biological phenomena anytime */}
-          <div className="grid grid-cols-3 gap-1.5 p-1 rounded-lg bg-slate-100 dark:bg-slate-900 border border-slate-200 dark:border-slate-800 text-xs font-mono">
+          <div className="grid grid-cols-3 gap-1 p-0.5 sm:gap-1.5 sm:p-1 rounded-lg bg-slate-100 dark:bg-slate-900 border border-slate-200 dark:border-slate-800 text-[11px] sm:text-xs font-mono">
             <button
               type="button"
               onClick={() => setActiveId('tl-nicrh-2025')}
-              className={`px-2 py-1.5 rounded transition-colors truncate cursor-pointer ${
+              className={`px-1.5 sm:px-2 py-1.5 rounded transition-colors truncate cursor-pointer text-center ${
                 activeMilestone.bioAnimationType === 'protein-folding'
                   ? 'bg-white dark:bg-slate-800 text-cyan-600 dark:text-cyan-400 font-semibold shadow-xs'
                   : 'text-slate-600 dark:text-slate-400'
               }`}
             >
-              Protein Folding
+              Protein
             </button>
             <button
               type="button"
               onClick={() => setActiveId('tl-mentorship-2021')}
-              className={`px-2 py-1.5 rounded transition-colors truncate cursor-pointer ${
+              className={`px-1.5 sm:px-2 py-1.5 rounded transition-colors truncate cursor-pointer text-center ${
                 activeMilestone.bioAnimationType === 'cell-growth'
                   ? 'bg-white dark:bg-slate-800 text-emerald-600 dark:text-emerald-400 font-semibold shadow-xs'
                   : 'text-slate-600 dark:text-slate-400'
               }`}
             >
-              Cell Mitosis
+              Mitosis
             </button>
             <button
               type="button"
               onClick={() => setActiveId('tl-bsc-2026')}
-              className={`px-2 py-1.5 rounded transition-colors truncate cursor-pointer ${
+              className={`px-1.5 sm:px-2 py-1.5 rounded transition-colors truncate cursor-pointer text-center ${
                 activeMilestone.bioAnimationType === 'receptor-docking'
                   ? 'bg-white dark:bg-slate-800 text-rose-600 dark:text-rose-400 font-semibold shadow-xs'
                   : 'text-slate-600 dark:text-slate-400'
               }`}
             >
-              IgG Docking
+              Docking
             </button>
           </div>
 
@@ -727,19 +727,19 @@ export const InteractiveBiotechTimeline: React.FC<
             <canvas ref={canvasRef} className="w-full h-full block" />
             <div className="absolute bottom-2.5 left-3 right-3 flex items-center justify-between text-[11px] font-mono text-slate-500 dark:text-slate-400 pointer-events-none">
               <span>MILESTONE: {activeMilestone.yearLabel}</span>
-              <span>{activeMilestone.bioMetric}</span>
+              <span className="truncate ml-2">{activeMilestone.bioMetric}</span>
             </div>
           </div>
 
           {/* Interactive Conformation / Growth Scrubber */}
           <div className="space-y-1.5 pt-1">
-            <div className="flex items-center justify-between text-xs font-mono">
-              <span className="text-slate-600 dark:text-slate-400">
+            <div className="flex flex-wrap items-center justify-between gap-1 text-xs font-mono">
+              <span className="truncate max-w-[210px] sm:max-w-none text-slate-600 dark:text-slate-400">
                 {activeMilestone.bioAnimationType === 'protein-folding'
-                  ? 'Folding State (Primary Chain → Tertiary Domain)'
+                  ? 'Folding State (Primary → Tertiary)'
                   : activeMilestone.bioAnimationType === 'cell-growth'
-                  ? 'Mitotic Expansion (Progenitor → Clonal Colony)'
-                  : 'Neutralization Kinetics (Free IgG → Epitope Complex)'}
+                  ? 'Mitotic Expansion (Progenitor → Colony)'
+                  : 'Neutralization Kinetics (Free IgG → Epitope)'}
               </span>
               <span className="font-bold text-cyan-600 dark:text-cyan-400">
                 {Math.round(foldProgress * 100)}%

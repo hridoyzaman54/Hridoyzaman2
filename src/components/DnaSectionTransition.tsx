@@ -253,12 +253,12 @@ export const DnaSectionMorphBridge: React.FC<DnaSectionMorphBridgeProps> = ({
     >
       <div className="max-w-[1280px] mx-auto px-4 sm:px-6 lg:px-8 py-4">
         <div className="flex flex-wrap items-center justify-between gap-3 mb-2 text-xs font-mono text-slate-500 dark:text-slate-400">
-          <div className="flex items-center gap-2">
+          <div className="flex flex-wrap items-center gap-x-2 gap-y-1 max-w-full">
             <span className="font-semibold text-slate-800 dark:text-slate-200">
-              HELIX TRANSITION LOCUS: {locusTag}
+              LOCUS: {locusTag}
             </span>
             <span aria-hidden="true">·</span>
-            <span>
+            <span className="text-slate-600 dark:text-slate-400">
               {fromSection} → {toSection}
             </span>
             {hoveredBase !== null && (
@@ -271,7 +271,7 @@ export const DnaSectionMorphBridge: React.FC<DnaSectionMorphBridgeProps> = ({
             )}
           </div>
 
-          <div className="flex items-center gap-2">
+          <div className="flex flex-wrap items-center gap-2">
             <div className="inline-flex items-center p-0.5 rounded-md bg-slate-200/80 dark:bg-slate-800/90 border border-slate-300/70 dark:border-slate-700">
               <button
                 type="button"
@@ -300,10 +300,10 @@ export const DnaSectionMorphBridge: React.FC<DnaSectionMorphBridgeProps> = ({
             <button
               type="button"
               onClick={handleMorphClick}
-              className="inline-flex items-center gap-1.5 px-3 py-1 text-xs font-mono font-medium text-cyan-700 dark:text-cyan-300 bg-cyan-500/10 hover:bg-cyan-500/20 border border-cyan-500/30 rounded-md transition-colors whitespace-nowrap shrink-0 cursor-pointer"
+              className="inline-flex items-center gap-1.5 px-3 py-1 text-xs font-mono font-medium text-cyan-700 dark:text-cyan-300 bg-cyan-500/10 hover:bg-cyan-500/20 border border-cyan-500/30 rounded-md transition-colors cursor-pointer"
             >
-              <span>Morph to {toSection}</span>
-              <ArrowDown className="w-3.5 h-3.5" />
+              <span className="truncate max-w-[170px] sm:max-w-none">Morph to {toSection}</span>
+              <ArrowDown className="w-3.5 h-3.5 shrink-0" />
             </button>
           </div>
         </div>
@@ -441,7 +441,7 @@ export const DnaNavigationOverlay: React.FC<DnaNavigationOverlayProps> = ({
       aria-live="polite"
     >
       <canvas ref={canvasRef} className="absolute inset-0 w-full h-full" />
-      <div className="relative z-10 text-center px-6 py-4 rounded-xl border border-cyan-500/30 bg-white/90 dark:bg-slate-900/90 shadow-lg">
+      <div className="relative z-10 text-center px-4 sm:px-6 py-3 sm:py-4 max-w-[90vw] rounded-xl border border-cyan-500/30 bg-white/90 dark:bg-slate-900/90 shadow-lg">
         <p className="text-xs font-mono uppercase tracking-wider text-cyan-600 dark:text-cyan-400">
           TRANSCRIBING GENOMIC LOCUS · {activeTransition.sequence}
         </p>

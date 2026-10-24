@@ -139,7 +139,7 @@ export default function App() {
 
   return (
     <div
-      className={`min-h-screen relative transition-colors duration-300 ${
+      className={`min-h-screen relative w-full max-w-full overflow-x-hidden transition-colors duration-300 ${
         isDark
           ? 'dark bg-[#07090E] text-slate-100'
           : 'bg-[#F8FAFC] text-slate-900'
@@ -253,7 +253,7 @@ export default function App() {
           </nav>
 
           {/* Zone 3: Light/Dark Theme Toggle + View CV Action + Mobile Menu Trigger */}
-          <div className="flex items-center gap-2.5 shrink-0">
+          <div className="flex items-center gap-1.5 sm:gap-2.5 shrink-0">
             {/* Sticky Top Menu Light/Dark Mode Toggle Button */}
             <button
               type="button"
@@ -262,7 +262,7 @@ export default function App() {
                 isDark ? 'Switch to Light Mode' : 'Switch to Dark Mode'
               }
               title={isDark ? 'Switch to Light Mode' : 'Switch to Dark Mode'}
-              className="inline-flex items-center gap-1.5 px-3 py-2 text-xs font-mono font-medium rounded-lg border border-slate-200 dark:border-slate-700 bg-slate-100/80 dark:bg-slate-900 text-slate-800 dark:text-slate-200 hover:border-cyan-500 transition-colors whitespace-nowrap shrink-0 cursor-pointer"
+              className="inline-flex items-center gap-1.5 px-2.5 sm:px-3 py-2 text-xs font-mono font-medium rounded-lg border border-slate-200 dark:border-slate-700 bg-slate-100/80 dark:bg-slate-900 text-slate-800 dark:text-slate-200 hover:border-cyan-500 transition-colors whitespace-nowrap shrink-0 cursor-pointer"
             >
               {isDark ? (
                 <>
@@ -282,10 +282,10 @@ export default function App() {
               href={PROFILE_DATA.cvPdfUrl}
               target="_blank"
               rel="noopener noreferrer"
-              className="inline-flex items-center gap-1.5 px-4 py-2 text-xs font-medium text-white bg-cyan-600 hover:bg-cyan-500 dark:bg-cyan-500 dark:text-slate-950 dark:hover:bg-cyan-400 rounded-lg transition-colors whitespace-nowrap shrink-0"
+              className="inline-flex items-center gap-1 px-3 sm:px-4 py-2 text-xs font-medium text-white bg-cyan-600 hover:bg-cyan-500 dark:bg-cyan-500 dark:text-slate-950 dark:hover:bg-cyan-400 rounded-lg transition-colors whitespace-nowrap shrink-0"
             >
               <span>View CV</span>
-              <ExternalLink className="w-3.5 h-3.5" />
+              <ExternalLink className="w-3 h-3 hidden xs:inline" />
             </a>
 
             <button
@@ -350,13 +350,13 @@ export default function App() {
 
       {/* Top Laboratory Telemetry & Cellular Optics Ribbon */}
       <div className="relative z-20 border-b border-slate-200 dark:border-slate-800/90 bg-slate-100/85 dark:bg-[#0B101B]/85">
-        <div className="max-w-[1280px] mx-auto px-4 sm:px-6 lg:px-8 py-2 flex flex-wrap items-center justify-between gap-3">
-          <div className="flex flex-wrap items-center gap-2 text-xs font-mono text-slate-600 dark:text-slate-400">
-            <span className="text-emerald-600 dark:text-emerald-400 font-semibold">
+        <div className="max-w-[1280px] mx-auto px-4 sm:px-6 lg:px-8 py-2 flex flex-col sm:flex-row items-center sm:justify-between gap-2.5">
+          <div className="flex flex-wrap items-center justify-center sm:justify-start gap-x-2 gap-y-1 text-center sm:text-left text-xs font-mono text-slate-600 dark:text-slate-400">
+            <span className="text-emerald-600 dark:text-emerald-400 font-semibold whitespace-nowrap">
               ● INTERACTIVE BIO-FIELD ACTIVE
             </span>
-            <span aria-hidden="true">·</span>
-            <span>MOVE CURSOR OR CLICK TO PULSE CELLS</span>
+            <span aria-hidden="true" className="hidden sm:inline">·</span>
+            <span className="hidden sm:inline">MOVE CURSOR OR CLICK TO PULSE CELLS</span>
             <span aria-hidden="true" className="hidden md:inline">
               ·
             </span>
@@ -365,8 +365,8 @@ export default function App() {
             </span>
           </div>
 
-          <div className="flex flex-wrap items-center gap-2">
-            <div className="inline-flex items-center gap-1 p-0.5 rounded-lg bg-slate-200/80 dark:bg-slate-800 border border-slate-300/70 dark:border-slate-700 text-[11px] font-mono">
+          <div className="flex items-center justify-center gap-2 max-w-full overflow-x-auto no-scrollbar">
+            <div className="inline-flex items-center gap-1 p-0.5 rounded-lg bg-slate-200/80 dark:bg-slate-800 border border-slate-300/70 dark:border-slate-700 text-[11px] font-mono whitespace-nowrap">
               <button
                 type="button"
                 onClick={() => {
@@ -459,7 +459,7 @@ export default function App() {
               }px, 0)`,
               transition: 'transform 140ms ease-out',
             }}
-            className="pointer-events-none absolute -top-24 left-1/4 w-[520px] h-[520px] rounded-full border border-cyan-500/10 dark:border-cyan-400/10 z-0"
+            className="hidden sm:block pointer-events-none absolute -top-24 left-1/4 w-[520px] h-[520px] rounded-full border border-cyan-500/10 dark:border-cyan-400/10 z-0"
           />
           <div
             aria-hidden="true"
@@ -469,7 +469,7 @@ export default function App() {
               }px, 0)`,
               transition: 'transform 140ms ease-out',
             }}
-            className="pointer-events-none absolute bottom-4 right-1/3 w-[380px] h-[380px] rounded-full border border-emerald-500/10 dark:border-emerald-400/10 z-0"
+            className="hidden sm:block pointer-events-none absolute bottom-4 right-1/3 w-[380px] h-[380px] rounded-full border border-emerald-500/10 dark:border-emerald-400/10 z-0"
           />
 
           <div className="relative z-10 max-w-[1280px] mx-auto px-4 sm:px-6 lg:px-8 pt-10 sm:pt-14 pb-16">
@@ -592,7 +592,7 @@ export default function App() {
                   </div>
 
                   {/* Direct Contact Metadata Line with Icons */}
-                  <div className="flex flex-wrap items-center gap-x-4 gap-y-2 text-xs font-mono text-slate-500 dark:text-slate-400">
+                  <div className="flex flex-wrap items-center gap-x-3 gap-y-2 text-xs font-mono text-slate-500 dark:text-slate-400">
                     <a
                       href={`mailto:${PROFILE_DATA.email}`}
                       className="inline-flex items-center gap-1.5 hover:text-cyan-600 dark:hover:text-cyan-400 transition-colors"
@@ -600,7 +600,7 @@ export default function App() {
                       <Mail className="w-3.5 h-3.5 text-cyan-600 dark:text-cyan-400 shrink-0" />
                       <span>{PROFILE_DATA.email}</span>
                     </a>
-                    <span aria-hidden="true">·</span>
+                    <span aria-hidden="true" className="text-slate-300 dark:text-slate-700">·</span>
                     <a
                       href={`tel:${PROFILE_DATA.phone.replace(/\s+/g, '')}`}
                       className="inline-flex items-center gap-1.5 hover:text-cyan-600 dark:hover:text-cyan-400 transition-colors"
@@ -608,12 +608,12 @@ export default function App() {
                       <Smartphone className="w-3.5 h-3.5 text-cyan-600 dark:text-cyan-400 shrink-0" />
                       <span>{PROFILE_DATA.phone}</span>
                     </a>
-                    <span aria-hidden="true">·</span>
+                    <span aria-hidden="true" className="text-slate-300 dark:text-slate-700">·</span>
                     <span className="inline-flex items-center gap-1.5">
                       <MapPin className="w-3.5 h-3.5 text-cyan-600 dark:text-cyan-400 shrink-0" />
                       <span>{PROFILE_DATA.location}</span>
                     </span>
-                    <span aria-hidden="true">·</span>
+                    <span aria-hidden="true" className="text-slate-300 dark:text-slate-700">·</span>
                     <a
                       href={PROFILE_DATA.website}
                       target="_blank"
@@ -647,7 +647,7 @@ export default function App() {
                   />
 
                   {/* Larger Portrait & Rotating Dual SVG Genomic Rings */}
-                  <div className="relative w-64 h-64 sm:w-72 sm:h-72 lg:w-80 lg:h-80 flex items-center justify-center">
+                  <div className="relative w-56 h-56 sm:w-72 sm:h-72 lg:w-80 lg:h-80 flex items-center justify-center">
                     <svg
                       viewBox="0 0 240 240"
                       className="absolute inset-0 w-full h-full pointer-events-none animate-[spin_24s_linear_infinite]"
@@ -689,7 +689,7 @@ export default function App() {
                     </svg>
 
                     {/* Circular Portrait Image (Stationary) */}
-                    <div className="relative w-52 h-52 sm:w-60 sm:h-60 lg:w-66 lg:h-66 rounded-full overflow-hidden border-2 border-cyan-500/70 dark:border-cyan-400/80 shadow-2xl bg-slate-200 dark:bg-slate-800">
+                    <div className="relative w-44 h-44 sm:w-60 sm:h-60 lg:w-66 lg:h-66 rounded-full overflow-hidden border-2 border-cyan-500/70 dark:border-cyan-400/80 shadow-2xl bg-slate-200 dark:bg-slate-800">
                       <img
                         src="/assets/aistudio/t-modified_47e40ef4.png"
                         alt="Hridoy Zaman — Biotechnology Researcher & AI Solutions Architect"
@@ -1288,7 +1288,7 @@ export default function App() {
       {/* Clean Minimal Footer */}
       <footer className="relative z-10 border-t border-slate-200 dark:border-slate-800 bg-white/80 dark:bg-[#07090E]/90 py-8">
         <div className="max-w-[1280px] mx-auto px-4 sm:px-6 lg:px-8 flex flex-col sm:flex-row items-center justify-between gap-4 text-xs text-slate-500 dark:text-slate-400">
-          <div className="flex items-center gap-2">
+          <div className="flex flex-wrap items-center justify-center sm:justify-start gap-x-2 gap-y-1 text-center sm:text-left">
             <span className="font-display font-bold text-slate-900 dark:text-white">
               Hridoy Zaman
             </span>
@@ -1298,7 +1298,7 @@ export default function App() {
             <span>Dhaka, Bangladesh</span>
           </div>
 
-          <div className="flex flex-wrap items-center gap-4">
+          <div className="flex flex-wrap items-center justify-center gap-4">
             <a
               href={PROFILE_DATA.cvPdfUrl}
               target="_blank"

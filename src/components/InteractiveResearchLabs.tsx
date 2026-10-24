@@ -205,11 +205,11 @@ export const InteractiveResearchLabs: React.FC<InteractiveResearchLabsProps> = (
           </div>
 
           {/* Interactive Workbench Switcher */}
-          <div className="inline-flex items-center p-1 rounded-lg bg-slate-200/80 dark:bg-slate-800 border border-slate-300/60 dark:border-slate-700">
+          <div className="w-full sm:w-auto grid grid-cols-1 sm:grid-cols-2 gap-1 p-1 rounded-lg bg-slate-200/80 dark:bg-slate-800 border border-slate-300/60 dark:border-slate-700">
             <button
               type="button"
               onClick={() => setActiveBench('dengue-sim')}
-              className={`px-3 py-1.5 text-xs font-mono rounded-md transition-colors whitespace-nowrap shrink-0 cursor-pointer ${
+              className={`px-3 py-1.5 text-xs font-mono rounded-md transition-colors text-center cursor-pointer ${
                 activeBench === 'dengue-sim'
                   ? 'bg-white dark:bg-slate-900 text-cyan-700 dark:text-cyan-300 font-semibold shadow-xs'
                   : 'text-slate-600 dark:text-slate-400 hover:text-slate-900 dark:hover:text-white'
@@ -220,7 +220,7 @@ export const InteractiveResearchLabs: React.FC<InteractiveResearchLabsProps> = (
             <button
               type="button"
               onClick={() => setActiveBench('nicrh-gel')}
-              className={`px-3 py-1.5 text-xs font-mono rounded-md transition-colors whitespace-nowrap shrink-0 cursor-pointer ${
+              className={`px-3 py-1.5 text-xs font-mono rounded-md transition-colors text-center cursor-pointer ${
                 activeBench === 'nicrh-gel'
                   ? 'bg-white dark:bg-slate-900 text-emerald-700 dark:text-emerald-300 font-semibold shadow-xs'
                   : 'text-slate-600 dark:text-slate-400 hover:text-slate-900 dark:hover:text-white'
@@ -387,7 +387,7 @@ export const InteractiveResearchLabs: React.FC<InteractiveResearchLabsProps> = (
             {/* Right Dual-Curve Epidemiological Time Series */}
             <div className="lg:col-span-8 p-5 sm:p-6 flex flex-col justify-between">
               <div className="flex flex-wrap items-center justify-between gap-3 mb-4">
-                <div className="flex items-center gap-4 text-xs font-mono">
+                <div className="flex flex-wrap items-center gap-x-4 gap-y-1 text-xs font-mono">
                   <span className="text-rose-500 dark:text-rose-400">
                     --- Unmitigated Monsoon Baseline
                   </span>
@@ -610,7 +610,7 @@ export const InteractiveResearchLabs: React.FC<InteractiveResearchLabsProps> = (
 
             {/* Right Interactive UV Transilluminator Gel Chamber */}
             <div className="lg:col-span-7 p-5 sm:p-6 flex flex-col justify-between">
-              <div className="flex items-center justify-between text-xs font-mono text-slate-500 dark:text-slate-400 mb-3">
+              <div className="flex flex-wrap items-center justify-between gap-1 text-xs font-mono text-slate-500 dark:text-slate-400 mb-3">
                 <span>
                   CHAMBER: NICRH MOLECULAR DIAGNOSTICS · CATHODE (−) → ANODE (+)
                 </span>
@@ -716,7 +716,7 @@ export const InteractiveResearchLabs: React.FC<InteractiveResearchLabsProps> = (
           </div>
 
           {/* Interactive Filter Controls (Functional Buttons) */}
-          <div className="flex flex-wrap items-center gap-1 p-1 rounded-lg bg-slate-200/75 dark:bg-slate-900 border border-slate-300/60 dark:border-slate-800">
+          <div className="flex flex-wrap items-center gap-1 p-1 rounded-lg bg-slate-200/75 dark:bg-slate-900 border border-slate-300/60 dark:border-slate-800 max-w-full overflow-x-auto no-scrollbar">
             {[
               { id: 'all', label: 'All Work (4)' },
               { id: 'epidemiology', label: 'Epidemiology' },

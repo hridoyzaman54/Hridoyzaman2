@@ -347,7 +347,7 @@ export const HeroDnaCanvas: React.FC<HeroDnaCanvasProps> = ({ isDark }) => {
         )}deg) rotateY(${(parallax.ry * 0.25).toFixed(2)}deg)`,
         transition: 'transform 160ms cubic-bezier(0.16, 1, 0.3, 1)',
       }}
-      className="w-full rounded-2xl border border-slate-200 dark:border-slate-800 bg-white/95 dark:bg-[#0B101B]/95 p-5 sm:p-7 shadow-lg"
+      className="w-full max-w-full rounded-2xl border border-slate-200 dark:border-slate-800 bg-white/95 dark:bg-[#0B101B]/95 p-4 sm:p-7 shadow-lg overflow-hidden"
     >
       {/* Top Wide Instrument Bar */}
       <div className="flex flex-wrap items-center justify-between gap-4 pb-4 border-b border-slate-200 dark:border-slate-800">
@@ -362,12 +362,12 @@ export const HeroDnaCanvas: React.FC<HeroDnaCanvasProps> = ({ isDark }) => {
         </div>
 
         {/* Conformation & Playback Controls */}
-        <div className="flex flex-wrap items-center gap-2">
-          <div className="inline-flex items-center gap-1 p-1 rounded-lg bg-slate-100 dark:bg-slate-900 border border-slate-200/80 dark:border-slate-800">
+        <div className="flex flex-wrap items-center gap-2 max-w-full">
+          <div className="flex items-center gap-1 p-1 rounded-lg bg-slate-100 dark:bg-slate-900 border border-slate-200/80 dark:border-slate-800 max-w-full overflow-x-auto no-scrollbar">
             <button
               type="button"
               onClick={() => setConformation('b-dna')}
-              className={`px-3 py-1.5 text-xs font-mono rounded-md transition-colors whitespace-nowrap shrink-0 cursor-pointer ${
+              className={`px-2.5 sm:px-3 py-1.5 text-xs font-mono rounded-md transition-colors whitespace-nowrap shrink-0 cursor-pointer ${
                 conformation === 'b-dna'
                   ? 'bg-white dark:bg-slate-800 text-cyan-700 dark:text-cyan-300 font-semibold shadow-xs'
                   : 'text-slate-600 dark:text-slate-400 hover:text-slate-900 dark:hover:text-white'
@@ -378,7 +378,7 @@ export const HeroDnaCanvas: React.FC<HeroDnaCanvasProps> = ({ isDark }) => {
             <button
               type="button"
               onClick={() => setConformation('denature-94c')}
-              className={`px-3 py-1.5 text-xs font-mono rounded-md transition-colors whitespace-nowrap shrink-0 cursor-pointer ${
+              className={`px-2.5 sm:px-3 py-1.5 text-xs font-mono rounded-md transition-colors whitespace-nowrap shrink-0 cursor-pointer ${
                 conformation === 'denature-94c'
                   ? 'bg-white dark:bg-slate-800 text-rose-600 dark:text-rose-400 font-semibold shadow-xs'
                   : 'text-slate-600 dark:text-slate-400 hover:text-slate-900 dark:hover:text-white'
@@ -389,7 +389,7 @@ export const HeroDnaCanvas: React.FC<HeroDnaCanvasProps> = ({ isDark }) => {
             <button
               type="button"
               onClick={() => setConformation('anneal-58c')}
-              className={`px-3 py-1.5 text-xs font-mono rounded-md transition-colors whitespace-nowrap shrink-0 cursor-pointer ${
+              className={`px-2.5 sm:px-3 py-1.5 text-xs font-mono rounded-md transition-colors whitespace-nowrap shrink-0 cursor-pointer ${
                 conformation === 'anneal-58c'
                   ? 'bg-white dark:bg-slate-800 text-amber-600 dark:text-amber-400 font-semibold shadow-xs'
                   : 'text-slate-600 dark:text-slate-400 hover:text-slate-900 dark:hover:text-white'
@@ -446,9 +446,9 @@ export const HeroDnaCanvas: React.FC<HeroDnaCanvasProps> = ({ isDark }) => {
           className="w-full h-full cursor-crosshair block touch-none"
         />
 
-        <div className="absolute top-3 left-4 pointer-events-none text-[11px] font-mono text-slate-500 dark:text-slate-400">
+        <div className="absolute top-3 left-4 right-4 pointer-events-none text-[11px] font-mono text-slate-500 dark:text-slate-400 truncate">
           3D HELIX · PITCH 3.40 nm/turn · PARALLAX ({Math.round(parallax.px)},
-          {Math.round(parallax.py)}) · PROBE ({cursorCoords.x},{cursorCoords.y})
+          {Math.round(parallax.py)})
         </div>
       </div>
 

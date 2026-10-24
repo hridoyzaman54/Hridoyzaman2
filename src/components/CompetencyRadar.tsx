@@ -21,7 +21,7 @@ export const CompetencyRadar: React.FC<CompetencyRadarProps> = ({ isDark }) => {
   // Compute 6-axis hexagonal radar polygon coordinates
   const size = 320;
   const center = size / 2;
-  const radius = 108;
+  const radius = 96;
 
   const axes = BIOTECH_COMPETENCIES.map((item, idx) => {
     const angle = (Math.PI * 2 * idx) / BIOTECH_COMPETENCIES.length - Math.PI / 2;
@@ -30,8 +30,8 @@ export const CompetencyRadar: React.FC<CompetencyRadarProps> = ({ isDark }) => {
     const valRadius = (item.score / 100) * radius;
     const xVal = center + Math.cos(angle) * valRadius;
     const yVal = center + Math.sin(angle) * valRadius;
-    const xLabel = center + Math.cos(angle) * (radius + 32);
-    const yLabel = center + Math.sin(angle) * (radius + 22);
+    const xLabel = center + Math.cos(angle) * (radius + 26);
+    const yLabel = center + Math.sin(angle) * (radius + 18);
 
     return {
       item,
@@ -57,7 +57,7 @@ export const CompetencyRadar: React.FC<CompetencyRadarProps> = ({ isDark }) => {
       {/* Top Split: Hexagonal Radar Calibration + Quantified Biotech Competency Bars */}
       <div className="grid grid-cols-1 lg:grid-cols-12 gap-6 items-stretch">
         {/* Left: Polygonal Radar Chart */}
-        <div className="lg:col-span-5 rounded-2xl border border-slate-200 dark:border-slate-800 bg-white dark:bg-[#0B101B] p-6 flex flex-col justify-between">
+        <div className="lg:col-span-5 rounded-2xl border border-slate-200 dark:border-slate-800 bg-white dark:bg-[#0B101B] p-4 sm:p-6 flex flex-col justify-between overflow-hidden">
           <div>
             <div className="text-xs font-mono uppercase tracking-wider text-slate-500 dark:text-slate-400">
               EMPIRICAL PROFICIENCY CALIBRATION
@@ -67,10 +67,10 @@ export const CompetencyRadar: React.FC<CompetencyRadarProps> = ({ isDark }) => {
             </h3>
           </div>
 
-          <div className="my-4 flex items-center justify-center">
+          <div className="my-4 flex items-center justify-center overflow-hidden">
             <svg
               viewBox={`0 0 ${size} ${size}`}
-              className="w-full max-w-[310px] h-auto overflow-visible"
+              className="w-full max-w-[300px] h-auto"
             >
               {/* Concentric Polygonal Reference Rings (25%, 50%, 75%, 100%) */}
               {[0.25, 0.5, 0.75, 1].map((scale) => {
@@ -175,7 +175,7 @@ export const CompetencyRadar: React.FC<CompetencyRadarProps> = ({ isDark }) => {
         </div>
 
         {/* Right: Quantified Laboratory Competency Matrix */}
-        <div className="lg:col-span-7 rounded-2xl border border-slate-200 dark:border-slate-800 bg-white dark:bg-[#0B101B] p-6 flex flex-col justify-between">
+        <div className="lg:col-span-7 rounded-2xl border border-slate-200 dark:border-slate-800 bg-white dark:bg-[#0B101B] p-4 sm:p-6 flex flex-col justify-between overflow-hidden">
           <div>
             <div className="flex flex-wrap items-center justify-between gap-3 pb-4 border-b border-slate-200 dark:border-slate-800">
               <div>
@@ -187,7 +187,7 @@ export const CompetencyRadar: React.FC<CompetencyRadarProps> = ({ isDark }) => {
                 </h3>
               </div>
 
-              <div className="inline-flex items-center gap-1 p-1 rounded-lg bg-slate-100 dark:bg-slate-900 border border-slate-200 dark:border-slate-800">
+              <div className="flex flex-wrap items-center gap-1 p-1 rounded-lg bg-slate-100 dark:bg-slate-900 border border-slate-200 dark:border-slate-800 max-w-full overflow-x-auto no-scrollbar">
                 {[
                   { id: 'all', label: 'All (6)' },
                   { id: 'wet-lab', label: 'Wet-Lab' },

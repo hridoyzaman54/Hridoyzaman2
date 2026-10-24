@@ -466,7 +466,7 @@ export const CellularBackground: React.FC<CellularBackgroundProps> = ({
     <canvas
       ref={canvasRef}
       aria-hidden="true"
-      className="fixed inset-0 pointer-events-none z-0 transition-opacity duration-500"
+      className="fixed inset-0 w-full h-full max-w-full pointer-events-none z-0 transition-opacity duration-500 overflow-hidden"
     />
   );
 };

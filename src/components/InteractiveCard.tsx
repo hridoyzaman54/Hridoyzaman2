@@ -70,7 +70,7 @@ export const InteractiveCard: React.FC<InteractiveCardProps> = ({
             : 'transform 320ms cubic-bezier(0.16, 1, 0.3, 1)',
         willChange: 'transform',
       }}
-      className={`relative overflow-hidden ${className}`}
+      className={`relative overflow-hidden max-w-full ${className}`}
     >
       {/* Dynamic Cursor-Following Bioluminescent Spotlight Layer */}
       <div
