@@ -621,7 +621,7 @@ export default function App() {
                       className="inline-flex items-center gap-1.5 text-cyan-600 dark:text-cyan-400 hover:underline"
                     >
                       <Globe className="w-3.5 h-3.5 shrink-0" />
-                      <span>hridoyzaman.vercel.app</span>
+                      <span>hridoyzamancv.vercel.app</span>
                     </a>
                   </div>
                 </div>
@@ -1320,7 +1320,7 @@ export default function App() {
               rel="noopener noreferrer"
               className="hover:text-cyan-600 dark:hover:text-cyan-400 transition-colors font-mono"
             >
-              hridoyzaman.vercel.app
+              hridoyzamancv.vercel.app
             </a>
           </div>
         </div>
